@@ -34,3 +34,27 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+# =========================
+# VISUAL STUDIO
+# =========================
+
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
