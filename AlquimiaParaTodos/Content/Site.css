@@ -47,3 +47,8 @@ input[type="checkbox"].input-validation-error {
   background-color: #428bff;
   padding: inherit;
 }
+.active-category-link
+{
+  color: #ffffff;  
+  padding: inherit;
+}

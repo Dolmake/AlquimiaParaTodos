@@ -72,13 +72,13 @@
             <div class="col-md-3">
                 <p class="lead">Alquimias Calvo</p>
                 <div class="list-group">
-                    <ul>
+                    <!--<ul>-->
                         @for (var i = 0; i < Model.Count(); i++)
                         {
                             if (Model.ElementAt(i).ID == category.ID)
                             {
-                                <div class="list-group-item active">
-                                     @Html.ActionLink(Model.ElementAt(i).Name, "Home", new { id = Model.ElementAt(i).ID })
+                                <div class="list-group-item active"> 
+                                        @Html.ActionLink(Model.ElementAt(i).Name, "Home", new { id = Model.ElementAt(i).ID }, new { @class = "active-category-link" })                                   
                                 </div>
                                 @*<div class="list-group-item">*@
                                 @*<a href="#" class="list-group-item">
@@ -95,7 +95,7 @@
                                 @*<a href="#" class="list-group-item" data-id="@Model.ElementAt(i).ID"> @Html.DisplayFor(modelItem => Model.ElementAt(i).Name)</a>*@
                             }
                         }
-                    </ul>
+                    <!--</ul>-->
 
 </div>
             </div>
