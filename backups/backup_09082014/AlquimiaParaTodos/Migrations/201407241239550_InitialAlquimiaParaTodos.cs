@@ -1,0 +1,159 @@
+namespace AlquimiaParaTodos.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class InitialAlquimiaParaTodos : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.Category",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Description = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Product",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Title = c.String(),
+                        Inci = c.String(),
+                        Summary = c.String(),
+                        SliderImageUrl = c.String(),
+                        ImageUrl = c.String(),
+                        ImageDescription = c.String(),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        BasePrice = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Weight = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Stock = c.Int(nullable: false),
+                        Offline = c.Boolean(nullable: false),
+                        ProductOption_ID = c.Int(),
+                        Product_ID = c.Int(),
+                        Request_UserID = c.Int(),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Option", t => t.ProductOption_ID)
+                .ForeignKey("dbo.Product", t => t.Product_ID)
+                .ForeignKey("dbo.Request", t => t.Request_UserID)
+                .Index(t => t.ProductOption_ID)
+                .Index(t => t.Product_ID)
+                .Index(t => t.Request_UserID);
+            
+            CreateTable(
+                "dbo.Course",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Description = c.String(),
+                        StartDate = c.DateTime(nullable: false),
+                        EndDate = c.DateTime(nullable: false),
+                        Hours = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Option",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Color = c.String(),
+                        Description = c.String(),
+                        ExtraPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Request",
+                c => new
+                    {
+                        UserID = c.Int(nullable: false),
+                        ID = c.Int(nullable: false),
+                        Code = c.String(),
+                        Date = c.DateTime(nullable: false),
+                        Total = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        ExtraPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        RequestState = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.UserID)
+                .ForeignKey("dbo.User", t => t.UserID)
+                .Index(t => t.UserID);
+            
+            CreateTable(
+                "dbo.User",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        LastName = c.String(),
+                        Email = c.String(),
+                        IsClient = c.Boolean(nullable: false),
+                        UserName = c.String(),
+                        Password = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.ProductCourse",
+                c => new
+                    {
+                        ProductID = c.Int(nullable: false),
+                        CourseID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.ProductID, t.CourseID })
+                .ForeignKey("dbo.Product", t => t.ProductID, cascadeDelete: true)
+                .ForeignKey("dbo.Course", t => t.CourseID, cascadeDelete: true)
+                .Index(t => t.ProductID)
+                .Index(t => t.CourseID);
+            
+            CreateTable(
+                "dbo.CategoryProduct",
+                c => new
+                    {
+                        CategoryID = c.Int(nullable: false),
+                        ProductID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.CategoryID, t.ProductID })
+                .ForeignKey("dbo.Category", t => t.CategoryID, cascadeDelete: true)
+                .ForeignKey("dbo.Product", t => t.ProductID, cascadeDelete: true)
+                .Index(t => t.CategoryID)
+                .Index(t => t.ProductID);
+            
+        }
+        
+        public override void Down()
+        {
+            DropForeignKey("dbo.Product", "Request_UserID", "dbo.Request");
+            DropForeignKey("dbo.Request", "UserID", "dbo.User");
+            DropForeignKey("dbo.CategoryProduct", "ProductID", "dbo.Product");
+            DropForeignKey("dbo.CategoryProduct", "CategoryID", "dbo.Category");
+            DropForeignKey("dbo.Product", "Product_ID", "dbo.Product");
+            DropForeignKey("dbo.Product", "ProductOption_ID", "dbo.Option");
+            DropForeignKey("dbo.ProductCourse", "CourseID", "dbo.Course");
+            DropForeignKey("dbo.ProductCourse", "ProductID", "dbo.Product");
+            DropIndex("dbo.Product", new[] { "Request_UserID" });
+            DropIndex("dbo.Request", new[] { "UserID" });
+            DropIndex("dbo.CategoryProduct", new[] { "ProductID" });
+            DropIndex("dbo.CategoryProduct", new[] { "CategoryID" });
+            DropIndex("dbo.Product", new[] { "Product_ID" });
+            DropIndex("dbo.Product", new[] { "ProductOption_ID" });
+            DropIndex("dbo.ProductCourse", new[] { "CourseID" });
+            DropIndex("dbo.ProductCourse", new[] { "ProductID" });
+            DropTable("dbo.CategoryProduct");
+            DropTable("dbo.ProductCourse");
+            DropTable("dbo.User");
+            DropTable("dbo.Request");
+            DropTable("dbo.Option");
+            DropTable("dbo.Course");
+            DropTable("dbo.Product");
+            DropTable("dbo.Category");
+        }
+    }
+}
