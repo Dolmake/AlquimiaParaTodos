@@ -1,7 +1,16 @@
-﻿body {
+﻿/* COLORES*/
+/*
+    VERDE CLARO: #92e686;
+    VERDE OSCURO: #437854;*/
+
+/*END-COLORES*/
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    
 }
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -19,6 +28,19 @@ textarea {
 /* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;
+}
+
+a {
+    color: #437854;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #437854;
+    text-decoration: underline;
+}
+a:focus {
+    outline: thin dotted #333;
+    outline-offset: -2px;
 }
 
 .field-validation-valid {
@@ -63,9 +85,53 @@ input[type="checkbox"].input-validation-error {
 		background: #444;
 	}
 .active_menu{
-    background-color: #94B317;
+    background-color: #92e686;
+    
+}
+
+/*COLUMNA IZQ*/
+.navbar-brand {
+  float: left;
+  padding: 8px 8px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
     color: #ffffff;
 }
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #437854;
+    color: #ffffff;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    background-color: #92e686;
+    border-color: #92e686;
+    color: #ffffff;
+    z-index: 2;
+}
+/*END-COLUMNA IZQ*/
+
+
+/*BOTONES*/
+.btn-primary {
+    background-color: #92e686;
+    border-color: #437854;
+    color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    background-color: #92e686;
+    border-color: #437854;
+    color: #ffffff;
+}
+.btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+/*END-BOTONES*/
+
+
 
 /*.navbar{
     background-color:#E8E8E8;

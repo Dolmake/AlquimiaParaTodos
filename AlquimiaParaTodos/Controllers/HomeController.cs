@@ -14,6 +14,12 @@ namespace AlquimiaParaTodos.Controllers
 
         private AlquimiaParaTodosDBContext db = new AlquimiaParaTodosDBContext();
 
+        protected override IActionInvoker CreateActionInvoker()
+        {
+            ViewBag.AppDescriptor = Startup.AppDescriptor;
+            return base.CreateActionInvoker();
+        }
+
         public ActionResult Index()
         {
             ViewBag.ActiveItem = 0;
