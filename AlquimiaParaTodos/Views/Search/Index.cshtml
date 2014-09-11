@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+
+<script src="/Scripts/jquery-1.10.2.min.js"
+        type="text/javascript">
+
+</script>
+<script type="text/javascript">
+   
+
+    function goto() {           
+        location.href += "/Find?text=" + $("#txBusqueda").val();       
+    }  
+</script>
+
+<h2>Buscar Productos</h2>
+@Html.Label("Introduzca el texto: ")
+
+
+<input id="txBusqueda" type="text" />
+<input class="btn btn-info" id="btBuscar" onclick="javascript: goto();" type="button" value="Buscar" />
+<div id="contenido" style="margin-top:40px">CONTENIDO</div>
+
+

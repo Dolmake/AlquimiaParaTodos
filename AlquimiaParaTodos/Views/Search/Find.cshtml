@@ -1,0 +1,23 @@
+﻿@model IEnumerable<AlquimiaParaTodos.Models.Product>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+@if (Model.Count() != 0)
+{
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>           
+        </tr>
+
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Title</td>
+                <td>@p.Price</td>               
+            </tr>
+        }
+    </table>
+}
