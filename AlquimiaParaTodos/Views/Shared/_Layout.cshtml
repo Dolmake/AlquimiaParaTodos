@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - Mezcla Perfecta</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -18,13 +18,52 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("¡Alquimia Para Todos!", "Index", "Home", null, new { @class = "navbar-brand" })
+                <a href='@Url.Action("index", "Home")' class="navbar-brand">
+                    <img alt="Mezcla perfecta" src="~/img/logo_mezcla_256x64.png" height="16px" />
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    @if (ViewBag.ActiveItem == 0)
+                    {
+                        <li>@Html.ActionLink("Inicio", "Index", "Home", new { @class = "active_menu" })</li>
+                    }    
+                    else
+                    {
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    }
+                    @if (ViewBag.ActiveItem == 1)
+                    { 
+                        <li>@Html.ActionLink("Categorías", "Home", "Home", new { @class = "active_menu" })</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Categorías", "Home", "Home")</li>
+                    }
+                    @if (ViewBag.ActiveItem == 4)
+                    {
+                        <li>@Html.ActionLink("Productos", "Index", "Products", new { @class = "active_menu" })</li>
+                    }
+                    else
+                    {                    
+                        <li>@Html.ActionLink("Productos", "Index", "Products")</li>
+                    }
+                    @if (ViewBag.ActiveItem == 2)
+                    {
+                        <li>@Html.ActionLink("Acerca de", "About", "Home", new { @class = "active_menu" })</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    }
+                    @if(ViewBag.ActiveItem == 3)
+                    {
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home", new { @class = "active_menu" })</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -34,7 +73,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - AlquimiaParaTodos S.L.</p>
+            <p>&copy; @DateTime.Now.Year - Mezcla Perfecta</p>
         </footer>
     </div>
 

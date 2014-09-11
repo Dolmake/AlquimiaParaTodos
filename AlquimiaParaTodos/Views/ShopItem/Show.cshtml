@@ -15,23 +15,23 @@
 
     <div class="row">
 
-        <div class="col-md-3">
-            <p class="lead">Alquimias Calvo</p>
-            <div class="list-group">
-                <ul>
-                    @for (var i = 0; i < categoryCount; i++)
+                @*<div class="col-md-3">
+        <p class="lead">Mezcla Perfecta</p>
+        <div class="list-group">
+            <ul>
+                @for (var i = 0; i < categoryCount; i++)
+                {
+                    if (Model.Categories.ElementAt(i).ID == category.ID)
                     {
-                        if (Model.Categories.ElementAt(i).ID == category.ID)
-                        {
-                            <div class="list-group-item active">
-                                <a href="~/Home/Home/@Model.Categories.ElementAt(i).ID">@Html.DisplayFor(modelItem => Model.Categories.ElementAt(i).Name)</a>
-                                @*@Html.ActionLink(categories.ElementAt(i).Name, "ShopItem", new { id = categories.ElementAt(i).ID })*@
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="list-group-item">
-                                @*@Html.ActionLink(categories.ElementAt(i).Name, "Home", new { id = categories.ElementAt(i).ID })*@
+                        <div class="list-group-item active">
+                            <a href="~/Home/Home/@Model.Categories.ElementAt(i).ID">@Html.DisplayFor(modelItem => Model.Categories.ElementAt(i).Name)</a>
+                            <!-- @Html.ActionLink(categories.ElementAt(i).Name, "ShopItem", new { id = categories.ElementAt(i).ID }) -->
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="list-group-item">
+                            <!-- @Html.ActionLink(categories.ElementAt(i).Name, "Home", new { id = categories.ElementAt(i).ID }) -->
                                 <a href="~/Home/Home/@Model.Categories.ElementAt(i).ID">@Html.DisplayFor(modelItem => Model.Categories.ElementAt(i).Name)</a>
                             </div>
                         }
@@ -39,7 +39,7 @@
                 </ul>
 
             </div>
-        </div>
+        </div>*@
         <div class="col-md-9">
             <div class="thumbnail">
                 <img class="img-responsive" src="@Html.DisplayFor(modelItem => Model.SliderImageUrl)" alt="">

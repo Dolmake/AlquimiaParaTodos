@@ -52,3 +52,26 @@ input[type="checkbox"].input-validation-error {
   color: #ffffff;  
   padding: inherit;
 }
+
+.menu ul {
+		font-size:11px !important;
+		_margin: 0; /*IE6 only*/
+		visibility: hidden;
+		position: absolute;
+		top: 40px;
+		left: 0;
+		background: #444;
+	}
+.active_menu{
+    background-color: #94B317;
+    color: #ffffff;
+}
+
+/*.navbar{
+    background-color:#E8E8E8;
+    color: #ffffff;
+}
+
+. navbar-brand{
+    font-size: 20px;
+}*/

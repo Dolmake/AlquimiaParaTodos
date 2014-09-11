@@ -16,20 +16,21 @@ namespace AlquimiaParaTodos.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.ActiveItem = 0;
             return View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
+            ViewBag.ActiveItem = 2;
             return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
+            ViewBag.ActiveItem = 3;
             return View();
         }
 
@@ -54,6 +55,7 @@ namespace AlquimiaParaTodos.Controllers
 
             ViewBag.Category = activeCategory;
             ViewBag.CategoryProductsCount = activeCategory.Products.Count();
+            ViewBag.ActiveItem = 1;
 
             return View(db.Categories.ToList());
         }

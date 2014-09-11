@@ -1,0 +1,37 @@
+﻿@model IEnumerable<AlquimiaParaTodos.Models.Category>
+@{
+    int id = ViewBag.Category.ID;
+    var category = Model.Single(cat => cat.ID == id);
+}
+
+<div class="col-md-3">
+    <p class="lead">Mezcla Perfecta</p>
+    <div class="list-group">
+        <!--<ul>-->
+        @for (var i = 0; i < Model.Count(); i++)
+        {
+            if (Model.ElementAt(i).ID == category.ID)
+            {
+                <div class="list-group-item active">
+                    @Html.ActionLink(Model.ElementAt(i).Name, "Home", new { id = Model.ElementAt(i).ID }, new { @class = "active-category-link" })
+                </div>
+                @*<div class="list-group-item">*@
+                @*<a href="#" class="list-group-item">
+                        <span class="active-category"> @Html.DisplayFor(modelItem => Model.ElementAt(i).Name) </span>
+                    </a>*@
+                @*</div>*@
+            }
+            else
+            {
+                <div class="list-group-item">
+                    @Html.ActionLink(Model.ElementAt(i).Name, "Home", new { id = Model.ElementAt(i).ID })
+                </div>
+
+                @*<a href="#" class="list-group-item" data-id="@Model.ElementAt(i).ID"> @Html.DisplayFor(modelItem => Model.ElementAt(i).Name)</a>*@
+            }
+        }
+        <!--</ul>-->
+
+    </div>
+</div>
+

@@ -19,6 +19,7 @@ namespace AlquimiaParaTodos.Controllers
         // GET: /Products/
         public ActionResult Index()
         {
+            ViewBag.ActiveItem = 4;
             return View(db.Products.ToList());
         }
 

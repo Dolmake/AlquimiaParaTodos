@@ -201,6 +201,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\logo.jpg" />
     <Content Include="img\logo_800x200.png" />
     <Content Include="img\p1.png" />
     <Content Include="img\p10-pinturita.png" />
@@ -269,6 +270,7 @@
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
     <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
+    <Content Include="Views\Shared\_Categories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
