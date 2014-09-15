@@ -24,14 +24,14 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @if (ViewBag.ActiveItem == 0)
+                    @*@if (ViewBag.ActiveItem == 0)
                     {
                         <li>@Html.ActionLink("Inicio", "Index", "Home", new { @class = "active_menu" })</li>
                     }    
                     else
                     {
                         <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    }
+                    }*@
                     @if (ViewBag.ActiveItem == 1)
                     { 
                         <li>@Html.ActionLink("Categorías", "Home", "Home", new { @class = "active_menu" })</li>

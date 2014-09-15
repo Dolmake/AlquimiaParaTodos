@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Carrito de la compra";
+    ViewBag.AddToCartEnabled = false;
 }
 <script src="/Scripts/jquery-1.10.2.min.js"
         type="text/javascript"></script>
@@ -28,6 +29,26 @@
                     });
             }
         });
+
+        @*$(".productItem").click(function () {
+            //alert("Name: " + this.name);
+            var itemId = this.name;
+            $.ajax(
+            {
+                url: '@Url.Action("ShowDetails", "ShopItem")',
+                data: { id: itemId },
+                type: "post",
+                cache: false,
+                success: function (response) {
+                    //do what ever you want here to extract the part you want
+                    $('#m_modalBody_' + itemId).html(response);
+                    $('#m_modal_' + itemId).modal('show');
+                },
+                error: function () {
+                    alert("Se ha producido un error");
+                }
+            });
+        });*@
     });
 </script>
 <h2><em>Revisa</em> el carrito:</h2>
@@ -57,7 +78,15 @@
 @foreach (var item in Model.CartItems) {
     <tr id="row-@item.ID">
         <td>
-            @Html.ActionLink(item.Item.Title, "ShopItem", "Show", new { id = item.ProductID }, null)
+            @*@Html.ActionLink(item.Item.Title, "ShopItem", "Show", new { id = item.ProductID }, null)*@
+            <a class="modal-product" name=@item.ProductID>
+                @Html.DisplayFor(modelItem => item.Item.Title)
+            </a>
+            @{
+                ViewData["AddToCartEnabled"] = "false";
+            }
+            @Html.Partial("_ModalProductDetail", @item.Item);          
+
         </td>
         <td>
             @item.Item.BasePrice
@@ -72,6 +101,7 @@
             </a>
         </td>
     </tr>
+}
     <tr>
         <td>
             Total
@@ -94,6 +124,6 @@
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>*@
-}
+
 
 </table>
