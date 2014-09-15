@@ -27,8 +27,8 @@ namespace AlquimiaParaTodos.Controllers
             return View(shoppingCartViewModel);
         }
 
-        //TODO: review, I think that need to be post
-        // GET: /Store/AddToCart/5
+       
+        // AJAX: /ShoppingCart/AddToCart/5
         [HttpPost]
         public ActionResult AddToCart(int id)
         {
@@ -41,8 +41,18 @@ namespace AlquimiaParaTodos.Controllers
 
             cart.AddToCart(addedProduct);
 
-            // Go back to the main store page for more shopping
-            return RedirectToAction("Index");
+            //// Go back to the main store page for more shopping
+            //return RedirectToAction("Index");
+
+            // Display the confirmation message
+            var results = new ShoppingCartRemoveViewModel
+            {
+                Message = Server.HtmlEncode(addedProduct.Title) +
+                    " has been added from your shopping cart.",
+                CartTotal = cart.GetTotal(),
+                CartCount = cart.GetCount() 
+            };
+            return Json(results);
         }
 
         //

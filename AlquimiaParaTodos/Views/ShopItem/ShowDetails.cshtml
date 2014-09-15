@@ -14,56 +14,32 @@
 
 
 
-<!DOCTYPE html>
+@*<!DOCTYPE html>
 
     <html>
     <head>
         <meta name="viewport" content="width=device-width" />
         <title>ShopDetails</title>
-
-        @*<script src="~/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
-        <script>
-
-            $(document).ready(function () {
-
-                $(button).click(function () {
-                    $.ajax({
-                        url: '@Url.Action("AddToCart", "ShoppingCart")',
-                        data: {id: Model.id },
-                        post: true,
-                        error: function () {
-                            alert("Se ha producido un error");
-                        }
-
-                    })
-                });
-
-            });
-
-        </script>*@
-
-
-
     </head>
-    <body>
+    <body>*@
     <div class="container">   
-                <div class="thumbnail">
+                <div class="thumbnail">                   
                     <img class="img-responsive" src="@Html.DisplayFor(modelItem => Model.SliderImageUrl)" alt="">
                     <div class="caption-full">                       
-                        <div class="text-right">
-                            <button class="btn btn-success">Añadir al carrito</button>
-                            @*@Html.ActionLink("Añadir al carrito", "AddToCart", "ShoppingCart", new { id = Model.ID }, new { @class = "btn btn-success" })*@
-                        </div>                       
+                        @*<div class="text-right">
+                            <button id="m_modalAddToCart"class="btn btn-success" onclick="addToCart()">Añadir al carrito</button>
+                            @Html.ActionLink("Añadir al carrito", "AddToCart", "ShoppingCart", new { id = Model.ID }, new { @class = "btn btn-success" })
+                        </div>*@                       
                         <h4 class="pull-right">@Html.DisplayFor(modelItem => Model.Price)</h4>
                         <h4>
                             <a href="#">@Html.DisplayFor(modelItem => Model.Title)</a>
                         </h4>
                         <p>@Model.Summary</p>
-                        <div class="text-right">
+                        @*<div class="text-right">
                             @Html.ActionLink("Añadir al carrito", "AddToCart", "ShoppingCart", new { id = Model.ID }, new { @class = "btn btn-success" })
-                        </div>  
+                        </div>*@  
                     </div>                    
                 </div>
     </div>   
-</body>
-</html>
+@*</body>
+</html>*@

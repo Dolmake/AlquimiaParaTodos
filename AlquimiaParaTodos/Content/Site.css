@@ -129,6 +129,26 @@ input[type="checkbox"].input-validation-error {
 .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
     background-image: none;
 }
+
+.btn-AddToCart {
+    background-color: #e7a300;
+    border-color: #437854;
+    color: #000000;
+     -moz-user-select: none;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+}
 /*END-BOTONES*/
 
 

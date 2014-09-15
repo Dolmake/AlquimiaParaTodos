@@ -15,24 +15,46 @@
 <script>
     $(document).ready(function () {
 
-        $("#productItem").click(function () {
-            //alert("Hey");
+
+        $(".productItem").click(function () {
+            //alert("Name: " + this.name);
+            var itemId = this.name;
             $.ajax(
             {
                 url: '@Url.Action("ShowDetails", "ShopItem")',               
-                data: { id: 1 },
+                data: { id: itemId },
                 type: "post",
                 cache: false,
                 success: function (response) {
                       //do what ever you want here to extract the part you want
-                        $('#myModal_body').html(response);
-                        $('#myModal').modal('show');
+                        $('#m_modalBody_' + itemId).html(response);                       
+                        $('#m_modal_' + itemId).modal('show');
                 },
                 error: function () {
                     alert("Se ha producido un error");
                 }
             });
         });
+
+        $(".btn-AddToCart").click(function () {
+            var itemId = this.name;
+
+            $.ajax(
+                {
+                    url: '@Url.Action("AddToCart", "ShoppingCart")',
+                    data: { id: itemId },
+                    type: "post",
+                    cache: false                   
+                });
+            //$.post("~/ShoppingCart/AddToCart/", {
+            //    id: itemId
+            //}, function (data, textStatus) {
+
+            //});
+
+        });
+
+     
     });
 
 </script>
@@ -159,7 +181,7 @@
                 </button> -->
 
                 <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -169,13 +191,14 @@
                             <div id="myModal_body" class="modal-body">
                                 ...
                             </div>
-                            <!--<div class="modal-footer">
+                            <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                 <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>-->
+                                <button id="m_modalAddToCart" class="btn btn-success">Añadir al carrito</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="row">
                     @foreach (var item in category.Products)
@@ -189,16 +212,12 @@
                                     <h4 >
                                         @*@Html.ActionLink(item.Title, "Home", new { id = item.ID })*@
                                         <!--<a id="productItem" href="~/ShopItem/Show/@item.ID">@Html.DisplayFor(modelItem => item.Title)</a> -->
-                                        <a id="productItem">
+                                        <a class="productItem" name=@item.ID>
                                             @Html.DisplayFor(modelItem => item.Title)
-                                        </a>
-                                        
-
+                                        </a>                                                                              
                                     </h4>
-                                    <p>@Html.DisplayFor(modelItem => item.Summary)</p>                              
-
-
-                                    @*<p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>*@
+                                    <p>@Html.DisplayFor(modelItem => item.Summary)</p>     
+                                    
                                 </div>
 
                                 <div class="ratings">
@@ -210,7 +229,26 @@
                                         <span class="glyphicon glyphicon-star"></span>
                                         <span class="glyphicon glyphicon-star"></span>
                                     </p>
-                                </div>                               
+                                </div>      
+                                
+                                <!--MODAL-->
+                                <div class="modal fade" id="m_modal_@item.ID" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">@ViewBag.AppDescriptor</h4>
+                                            </div>
+                                            <div id="m_modalBody_@item.ID" class=" modal-body">
+                                                ...
+                                            </div>
+                                            <div class="modal-footer">                                               
+                                                <button id="m_modalAddToCart" class="btn-AddToCart" name="@item.ID" data-dismiss="modal">Añadir al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>     
+                                <!--END MODAL-->                    
                             </div>
                         </div>
                     }
