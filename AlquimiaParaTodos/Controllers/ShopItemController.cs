@@ -51,7 +51,7 @@ namespace AlquimiaParaTodos.Controllers
                 return HttpNotFound();
             }
 
-            Category activeCategory = product.Categories.ElementAt(0);
+            Category activeCategory = product.Categories.Count() > 0 ? product.Categories.ElementAt(0) : null;
 
             ViewBag.Categories = db.Categories.ToList();
             ViewBag.ActiveCategory = activeCategory;

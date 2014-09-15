@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AlquimiaParaTodos.Models.Product>
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            @*<img src="~/img/p1.png" alt="">*@
+            <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="" />
+            <div class="caption">
+                <h4 class="pull-right">$@Html.DisplayFor(modelItem => item.Price)</h4>
+                <h4>
+                    @*@Html.ActionLink(item.Title, "Home", new { id = item.ID })*@
+                    <!--<a id="modal-product" href="~/ShopItem/Show/@item.ID">@Html.DisplayFor(modelItem => item.Title)</a> -->
+                    <a class="modal-product" name=@item.ID>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </a>
+                </h4>
+                <p>@Html.DisplayFor(modelItem => item.Summary)</p>
+
+            </div>
+
+            <div class="ratings">
+                <p class="pull-right">15 reviews</p>
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </p>
+            </div>
+
+            @Html.Partial("_ModalProductDetail", @item)
+        </div>
+    </div>
+}

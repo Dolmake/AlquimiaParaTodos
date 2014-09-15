@@ -24,7 +24,7 @@ namespace AlquimiaParaTodos
 
         public ActionResult Find(string text)
         {
-            return View(FindByText(text));          
+            return View("_GridProducts", FindByText(text));          
         }
 
 
