@@ -29,6 +29,7 @@ namespace AlquimiaParaTodos.Controllers
 
         //TODO: review, I think that need to be post
         // GET: /Store/AddToCart/5
+        [HttpPost]
         public ActionResult AddToCart(int id)
         {
             // Retrieve the album from the database

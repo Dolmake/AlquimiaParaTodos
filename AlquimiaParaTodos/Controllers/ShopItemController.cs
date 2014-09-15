@@ -38,6 +38,28 @@ namespace AlquimiaParaTodos.Controllers
             return View(product);
         }
 
+        [HttpPost()]
+        public ActionResult ShowDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Products.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+
+            Category activeCategory = product.Categories.ElementAt(0);
+
+            ViewBag.Categories = db.Categories.ToList();
+            ViewBag.ActiveCategory = activeCategory;
+            ViewBag.CategoriesCount = product.Categories.Count();
+
+            return View(product);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

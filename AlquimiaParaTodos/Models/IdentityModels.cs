@@ -13,5 +13,7 @@ namespace AlquimiaParaTodos.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<AlquimiaParaTodos.Models.Product> Products { get; set; }
     }
 }
