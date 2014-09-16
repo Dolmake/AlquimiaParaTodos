@@ -1,6 +1,6 @@
 ﻿/* COLORES*/
 /*
-    VERDE CLARO: #92e686;
+    VERDE OSCURIN: #80A649;
     VERDE OSCURO: #437854;*/
 
 /*END-COLORES*/
@@ -32,7 +32,7 @@ textarea {
 
 a {
     color: #437854;
-    text-decoration: none;
+    text-decoration: none;    
 }
 a:hover, a:focus {
     color: #437854;
@@ -67,12 +67,22 @@ input[type="checkbox"].input-validation-error {
 {
   color: #ffffff;
   background-color: #428bff;
-  padding: inherit;
+  padding: inherit;   
 }
 .active-category-link
 {
   color: #ffffff;  
-  padding: inherit;
+  padding: inherit;  
+}
+
+.non-active-category
+{
+  font-size : 12px;
+}
+.non-active-category-link
+{
+ font-size : 12px;
+  padding: inherit;  
 }
 
 .menu ul {
@@ -85,7 +95,7 @@ input[type="checkbox"].input-validation-error {
 		background: #444;
 	}
 .active_menu{
-    background-color: #92e686;
+    background-color: #80A649;
     
 }
 
@@ -107,22 +117,36 @@ input[type="checkbox"].input-validation-error {
 }
 
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
-    background-color: #92e686;
-    border-color: #92e686;
+    background-color: #80A649;
+    border-color: #80A649;
     color: #ffffff;
     z-index: 2;
+}
+
+.list-group-item {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    display: block;
+    margin-bottom: -1px;
+    padding: 5px 8px;
+    position: relative;
+}
+
+.row {
+  margin-right: -30px;
+  margin-left: -30px;
 }
 /*END-COLUMNA IZQ*/
 
 
 /*BOTONES*/
 .btn-primary {
-    background-color: #92e686;
+    background-color: #80A649;
     border-color: #437854;
     color: #ffffff;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
-    background-color: #92e686;
+    background-color: #80A649;
     border-color: #437854;
     color: #ffffff;
 }
@@ -131,11 +155,10 @@ input[type="checkbox"].input-validation-error {
 }
 
 .btn-AddToCart {
-    background-color: #e7a300;
-    border-color: #437854;
-    color: #000000;
+    background-color: #e7a300;    
+    color: #FFFFFF;
      -moz-user-select: none;
-    border: 1px solid transparent;
+    border: 1px solid #5C4100;
     border-radius: 12px;
     cursor: pointer;
     display: inline-block;
@@ -147,9 +170,59 @@ input[type="checkbox"].input-validation-error {
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
+}
 
+.green-small-button {
+    background: none repeat scroll 0 0 padding-box #80a649;
+    border: 0 none;
+    border-radius: 4px;
+    box-shadow: 0 -40px 80px -40px rgba(0, 0, 0, 0.15) inset;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: CenturyGothicStd-Bold,sans-serif;   
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1em !important;
+    margin: 4px;
+    padding: 9px 19px 9px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition-duration: 150ms;
+    transition-property: color, background;
+}
+
+.white-small-button {
+    background: none repeat scroll 0 0 padding-box #555555;
+    border: 0 none;
+    border-radius: 4px;
+    box-shadow: 0 -40px 80px -40px rgba(0, 0, 0, 0.15) inset;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: CenturyGothicStd-Bold,sans-serif;   
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1em !important;
+    margin: 4px;
+    padding: 9px 19px 9px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition-duration: 150ms;
+    transition-property: color, background;
 }
 /*END-BOTONES*/
+
+/*IMAGENES*/
+
+.imgLogoLink
+{
+  background: url(/img/logo.jpg) no-repeat;
+}
+
+/*END IMAGENES*/
 
 
 

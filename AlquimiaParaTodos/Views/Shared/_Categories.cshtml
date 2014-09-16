@@ -5,12 +5,12 @@
 }
 
 
-<div class="col-md-3">
+
     <!--<p class="lead">@ViewBag.AppDescriptor </p>-->
     <p></p>
     @Html.Partial("_SearchForm")
     <div class="list-group">
-        <!--<ul>-->
+      
         @for (var i = 0; i < Model.Count(); i++)
         {
             if (Model.ElementAt(i).ID == category.ID)
@@ -27,14 +27,14 @@
             else
             {
                 <div class="list-group-item">
-                    @Html.ActionLink(Model.ElementAt(i).Name, "Home", new { id = Model.ElementAt(i).ID })
+                    @Html.ActionLink(Model.ElementAt(i).Name, "Home", new { id = Model.ElementAt(i).ID }, new { @class = "non-active-category-link" })
                 </div>
 
                 @*<a href="#" class="list-group-item" data-id="@Model.ElementAt(i).ID"> @Html.DisplayFor(modelItem => Model.ElementAt(i).Name)</a>*@
             }
         }
-        <!--</ul>-->
+       
 
     </div>
-</div>
+
 
