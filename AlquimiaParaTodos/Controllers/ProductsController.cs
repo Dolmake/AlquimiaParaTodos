@@ -38,6 +38,21 @@ namespace AlquimiaParaTodos.Controllers
             return View(product);
         }
 
+        // GET: /Products/Modal/5
+        public ActionResult Modal(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Products.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View("_ModalProductDetail",product);
+        }
+
         // GET: /Products/Create
         public ActionResult Create()
         {
