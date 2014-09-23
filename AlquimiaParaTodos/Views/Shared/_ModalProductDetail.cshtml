@@ -6,7 +6,10 @@
 
 <script>
 
-    function onModal(itemId) {       
+    function onModal(itemId) {
+
+        $('.spinner input').val(1);
+
         $.ajax(
            {
                url: '@Url.Action("ShowDetails", "ShopItem")',
@@ -45,33 +48,29 @@
 
     $(document).ready(function () {        
 
-        @*$(".modal-product").click(function () {
-            //alert("Name: " + this.name);
-            var itemId = this.name;
-            $.ajax(
-            {
-                url: '@Url.Action("ShowDetails", "ShopItem")',
-                data: { id: itemId },
-                type: "post",
-                cache: false,
-                success: function (response) {
-                      //do what ever you want here to extract the part you want
-                        $('#m_modalBody_' + itemId).html(response);
-                        $('#m_modal_' + itemId).modal('show');
-                },
-                error: function () {
-                    alert("Se ha producido un error");
-                }
-            });
-        });*@
+        var MAX = 100;
+        var MIN = 1;
+        var INC = 1;
+
+        $('.spinner .btn:first-of-type').on('click', function () {
+            var val = parseInt($('.spinner input').val(), 10) + INC;
+            val = val > MAX ? MAX : val;
+            $('.spinner input').val(val);
+        });
+        $('.spinner .btn:last-of-type').on('click', function () {
+            var val = parseInt($('.spinner input').val(), 10) - INC;
+            val = val < MIN ? MIN : val;
+            $('.spinner input').val(val);
+        });
 
         $("#m_modalAddToCart").click(function () {
             var itemId = this.name;
-            //alert(itemId);
+            var productAmount =  $('.spinner input').val();
+           
             $.ajax(
                 {
                     url: '@Url.Action("AddToCart", "ShoppingCart")',
-                    data: { id: itemId },
+                    data: { id: itemId, amount: productAmount },
                     type: "post",
                     cache: false,
                     success: function (response) {
@@ -86,29 +85,6 @@
 </script>
 
 
-
-  <!--MODAL-->
-@*<div class="modal fade" id="m_modal_@Model.ID" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">   
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">@ViewBag.AppDescriptor</h4>
-            </div>
-            <div id="m_modalBody_@Model.ID" class="modal-body">
-                ...
-            </div>
-           
-            @if (ViewData["AddToCartEnabled"] != "false")
-            {
-                <div class="modal-footer">
-                    <button id="m_modalAddToCart" class="btn-AddToCart" name="@Model.ID" data-dismiss="modal">Añadir al carrito</button>
-                </div>
-            }
-        </div>
-    </div>
-</div>*@
-
 <div class="modal fade" id="m_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -121,9 +97,24 @@
             </div>
 
             @if (ViewData["AddToCartEnabled"] != "false")
-            {                
-                <div class="modal-footer">
-                    <button id="m_modalAddToCart" class="btn-AddToCart" data-dismiss="modal" name="">Añadir al carrito</button>
+            {
+                <div class="cart-border">
+                    <div class="container">
+                        <div class="col-md-6">
+                            <div class="input-group spinner">
+                                <input type="text" class="form-control" value="1">
+                                <div class="input-group-btn-vertical">
+                                    <button class="btn btn-default"><i class="fa fa-caret-up"></i></button>
+                                    <button class="btn btn-default"><i class="fa fa-caret-down"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 pull-right">
+                            @**@
+                            <button id="m_modalAddToCart" class="btn-AddToCart" data-dismiss="modal" name="">Añadir al carrito</button>
+                            @*  *@
+                        </div>
+                    </div>
                 </div>
             }
         </div>

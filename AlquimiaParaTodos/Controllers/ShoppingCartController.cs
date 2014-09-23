@@ -44,7 +44,7 @@ namespace AlquimiaParaTodos.Controllers
        
         // AJAX: /ShoppingCart/AddToCart/5
         [HttpPost]
-        public ActionResult AddToCart(int id)
+        public ActionResult AddToCart(int id, int amount)
         {
             // Retrieve the album from the database
             var addedProduct = dbContext.Products
@@ -52,8 +52,9 @@ namespace AlquimiaParaTodos.Controllers
 
             // Add it to the shopping cart
             var cart = ShoppingCart.GetCart(this.HttpContext);
-
-            cart.AddToCart(addedProduct);
+            amount = amount < 1 ? 1 : amount;
+            for (int i = 0; i < amount;++i )
+                cart.AddToCart(addedProduct);
 
             //// Go back to the main store page for more shopping
             //return RedirectToAction("Index");
