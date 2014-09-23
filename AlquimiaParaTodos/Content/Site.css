@@ -202,6 +202,28 @@ input[type="checkbox"].input-validation-error {
     transition-duration: 150ms;
     transition-property: color, background;
 }
+
+.red-small-button {
+     background: none repeat scroll 0 0 padding-box #FA5570;
+    border: 0 none;
+    border-radius: 4px;
+    box-shadow: 0 -40px 80px -40px rgba(0, 0, 0, 0.15) inset;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: CenturyGothicStd-Bold,sans-serif;   
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1em !important;
+    margin: 4px;
+    padding: 9px 19px 9px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition-duration: 150ms;
+    transition-property: color, background;
+
+}
 /*END-BOTONES*/
 
 /* CART */
@@ -240,6 +262,11 @@ input[type="checkbox"].input-validation-error {
 .imgLogoLink
 {
   background: url(/img/logo.jpg) no-repeat;
+}
+
+.imgCarIcon
+{
+  background: url(/img/icons/shop_cart_48x48.png) no-repeat;
 }
 
 /*.RemoveLink {
