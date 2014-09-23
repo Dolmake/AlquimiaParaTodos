@@ -159,23 +159,7 @@ input[type="checkbox"].input-validation-error {
     background-image: none;
 }
 
-.btn-AddToCart {
-    background-color: #e7a300;    
-    color: #FFFFFF;
-     -moz-user-select: none;
-    border: 1px solid #5C4100;
-    border-radius: 12px;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.42857;
-    margin-bottom: 0;
-    padding: 6px 12px;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-}
+
 
 .green-small-button {
     background: none repeat scroll 0 0 padding-box #80a649;
@@ -219,6 +203,37 @@ input[type="checkbox"].input-validation-error {
     transition-property: color, background;
 }
 /*END-BOTONES*/
+
+/* CART */
+
+.btn-AddToCart {
+    background-color: #e7a300;    
+    color: #FFFFFF;
+     -moz-user-select: none;
+    border: 1px solid #5C4100;
+    border-radius: 12px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.cart-border{
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #dddddd;    
+       /*border-radius: 12px;*/
+}
+
+
+/*END CART */
 
 /*IMAGENES*/
 

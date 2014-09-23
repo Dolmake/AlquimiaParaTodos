@@ -53,76 +53,12 @@
 </script>
 <h2><em>Revisa</em> el carrito:</h2>
 
-<p>
-    @Html.ActionLink("Checkout>>", "AddressAndPayment", "Checkout")
-</p>
 <div id="update-message">
 </div>
-<table class="table">
-    <tr>
-        <th>
-            Nombre del Producto
-        </th>
-        <th>
-            Precio
-        </th>
-        <th>
-            Cantidad
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.CartTotal)
-        </th>*@
-        <th></th>
-    </tr>
+<div id="m_cartTable">
+    @Html.Partial("CartRows",@Model)
+</div>
+<p>
+    @Html.ActionLink("Confirmar", "AddressAndPayment", "Checkout", new { @class = "btn btn-primary" })
+</p>
 
-@foreach (var item in Model.CartItems) {
-    <tr id="row-@item.ID">
-        <td>
-            @*@Html.ActionLink(item.Item.Title, "ShopItem", "Show", new { id = item.ProductID }, null)*@
-            <a class="modal-product" name=@item.ProductID>
-                @Html.DisplayFor(modelItem => item.Item.Title)
-            </a>
-            @{
-                ViewData["AddToCartEnabled"] = "false";
-            }                 
-
-        </td>
-        <td>
-            @item.Item.BasePrice
-        </td>
-        <td id="item-count-@item.ID">
-            @item.Quantity
-        </td>
-        <td>
-            <a href="#" class="RemoveLink"
-               data-id="@item.ID">
-                Eliminar del carrito
-            </a>
-        </td>
-    </tr>
-}
-    <tr>
-        <td>
-            Total
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td id="cart-total">
-            @Model.CartTotal
-        </td>
-    </tr>
-    @*<tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CartTotal)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>*@
-
-
-</table>

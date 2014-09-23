@@ -30,7 +30,7 @@
                     if (data.ItemCount == 0) {
                         $('#row-' + data.DeleteId).fadeOut('slow');
                     } else {
-                        $('#item-count-' + data.DeleteId).text(data.ItemCount);
+                        $('#item-count-' + data.DeleteId).text(_formatQuantity(data.ItemCount));
                     }
                     $('#cart-total').text(data.CartTotal);
                     //$('#update-message').text(data.Message);
@@ -49,7 +49,7 @@
               cache: false,
               success: function (response) {
                   //do what ever you want here to extract the part you want
-                  $('#m_miniCartTable').html(response);
+                  $('#m_cartTable').html(response);
 
               },
               error: function () {
@@ -58,16 +58,18 @@
           });       
     }
 
+    function _formatQuantity(count) { return count + "x";}
+
 </script>
 @*<h2><em>Revisa</em> el minicarrito:</h2>*@
 
-<div>
+<div class="cart-border">
     <p class="active_menu active-category-link">  Carrito</p>
     @*<div id="update-message">
     </div>*@
-   <div id="m_miniCartTable">
-            ...
-   </div>
+    <div id="m_cartTable">
+        ...
+    </div>
     <p>
         @Html.ActionLink("Confirmar", "Index", "ShoppingCart", new { @class = "btn btn-primary" })
     </p>

@@ -281,6 +281,7 @@
     <Content Include="Views\Shared\_GridProducts.cshtml" />
     <Content Include="Views\ShoppingCart\MiniCart.cshtml" />
     <Content Include="Views\ShoppingCart\MiniCartRows.cshtml" />
+    <Content Include="Views\ShoppingCart\CartRows.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

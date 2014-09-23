@@ -9,8 +9,10 @@ namespace System.Web.Mvc.Html
 {
     public static class EXTENSIONS
     {
-        public static MvcHtmlString DisplayShortNameFor(this HtmlHelper html, string value, int maxlenght)
+        public static MvcHtmlString DisplayShortNameFor(this HtmlHelper html, string value, int maxlenght = 0)
         {
+            if (maxlenght == 0) return new MvcHtmlString(value);
+
             string add = "";
             if (value.Length > maxlenght)
             {

@@ -83,7 +83,7 @@ namespace AlquimiaParaTodos.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Home", "Home");
                 }
                 else
                 {

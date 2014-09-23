@@ -19,6 +19,6 @@ else
     <ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink("Registrarse", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "green-small-button" })</li>
         <li>@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "white-small-button" })</li>
-        <li>@{Html.RenderAction("CartSummary", "ShoppingCart");}</li>
+        @*<li>@{Html.RenderAction("CartSummary", "ShoppingCart");}</li>*@
     </ul>
 }
