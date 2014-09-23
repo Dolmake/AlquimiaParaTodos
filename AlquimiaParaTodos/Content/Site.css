@@ -11,6 +11,11 @@ body {
     
 }
 
+.body-border{
+    border: 1px solid #dddddd;
+    /*border-radius: 12px;*/
+}
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -221,6 +226,11 @@ input[type="checkbox"].input-validation-error {
 {
   background: url(/img/logo.jpg) no-repeat;
 }
+
+/*.RemoveLink {
+    background: url(/img/icons/close_grey.png) no-repeat;
+
+}*/
 
 /*END IMAGENES*/
 

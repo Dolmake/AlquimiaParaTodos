@@ -190,6 +190,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="UTILS\UTILS.cs" />
     <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
@@ -278,6 +279,8 @@
     <Content Include="Views\Shared\_ModalProductDetail.cshtml" />
     <Content Include="Views\Shared\_SearchForm.cshtml" />
     <Content Include="Views\Shared\_GridProducts.cshtml" />
+    <Content Include="Views\ShoppingCart\MiniCart.cshtml" />
+    <Content Include="Views\ShoppingCart\MiniCartRows.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

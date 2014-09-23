@@ -27,6 +27,20 @@ namespace AlquimiaParaTodos.Controllers
             return View(shoppingCartViewModel);
         }
 
+        // GET: /MiniCart/
+        public ActionResult MiniCart()
+        {
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+
+            var shoppingCartViewModel = new ShoppingCartViewModel
+            {
+                CartItems = cart.GetCartItems(),
+                CartTotal = cart.GetTotal()
+            };
+
+            return View("MiniCart",shoppingCartViewModel);
+        }
+
        
         // AJAX: /ShoppingCart/AddToCart/5
         [HttpPost]
@@ -53,6 +67,22 @@ namespace AlquimiaParaTodos.Controllers
                 CartCount = cart.GetCount() 
             };
             return Json(results);
+        }
+
+        // AJAX: /ShoppingCart/UpdateCart
+        [HttpPost]
+        public ActionResult UpdateCart()
+        {
+
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+
+            var shoppingCartViewModel = new ShoppingCartViewModel
+            {
+                CartItems = cart.GetCartItems(),
+                CartTotal = cart.GetTotal()
+            };
+
+            return View("MiniCartRows", shoppingCartViewModel);
         }
 
         //
@@ -93,5 +123,6 @@ namespace AlquimiaParaTodos.Controllers
             ViewData["CartCount"] = cart.GetCount();
             return PartialView("CartSummary");
         }
+
 	}
 }
