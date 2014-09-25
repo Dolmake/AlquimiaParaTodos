@@ -95,8 +95,9 @@ namespace AlquimiaParaTodos.Controllers
             var cart = ShoppingCart.GetCart(this.HttpContext);
 
             // Get the name of the item to display confirmation
-            string itemName = dbContext.Carts
-                .Single(item => item.ID == id).Item.Title;
+            var product =  dbContext.Carts
+                .Single(item => item.ID == id);
+            string itemName = product == null ? "NONE " : product.Item.Title;
 
             // Remove from cart
             int itemCount = cart.RemoveFromCart(id);

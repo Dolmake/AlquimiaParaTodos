@@ -15,6 +15,12 @@ namespace AlquimiaParaTodos.DAL
         public DbSet<User> Users { get; set; }
         public DbSet<Cart> Carts { get; set; }
 
+
+        public AlquimiaParaTodosDBContext()
+            : base("Alquimia01-Connection")
+        {
+        }
+
         /// <summary>
         /// To Add new entities to the data model. Is this case, it is added a many-to-many relationship
         /// between Product and Category and between Product and Course.
