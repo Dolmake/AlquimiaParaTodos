@@ -10,7 +10,12 @@ namespace AlquimiaParaTodos.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DBROLES-Connection")
+#if DEBUG
+            //: base("DBROLES-Connection")
+            : base("Alquimia-DBROLES-Connection")
+#elif RELEASE
+            : base("Alquimia-DBROLES-Hostalia-Connection")
+#endif
         {
         }
        

@@ -17,7 +17,12 @@ namespace AlquimiaParaTodos.DAL
 
 
         public AlquimiaParaTodosDBContext()
-            : base("Alquimia01-Connection")
+#if DEBUG
+            //: base("Alquimia01-Connection")
+            : base("Alquimia-DBROLES-Connection")
+#elif RELEASE
+            : base("Alquimia-DBROLES-Hostalia-Connection")
+#endif
         {
         }
 

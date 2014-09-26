@@ -6,14 +6,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\projects\Web\AlquimiaParaTodos\AlquimiaParaTodos\bin\Builds\v01</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\projects\Web\AlquimiaParaTodos\AlquimiaParaTodos\bin\Builds\v03</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Readme/Elmah.txt">
       <publishTime>08/10/2014 11:44:22</publishTime>
     </File>
     <File Include="bin/AlquimiaParaTodos.dll">
-      <publishTime>09/25/2014 22:12:47</publishTime>
+      <publishTime>09/26/2014 17:12:27</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>07/12/2014 15:16:48</publishTime>
@@ -307,16 +307,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/12/2014 15:16:54</publishTime>
     </File>
     <File Include="Views/Checkout/AddressAndPayment.cshtml">
-      <publishTime>08/06/2014 17:49:39</publishTime>
+      <publishTime>06/08/2014 17:49:39</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>07/12/2014 15:16:12</publishTime>
+      <publishTime>09/26/2014 14:04:06</publishTime>
     </File>
     <File Include="Views/Home/Cart.cshtml">
       <publishTime>07/12/2014 19:32:09</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
-      <publishTime>07/12/2014 15:16:12</publishTime>
+      <publishTime>09/26/2014 14:06:40</publishTime>
     </File>
     <File Include="Views/Home/Home.cshtml">
       <publishTime>09/23/2014 14:43:33</publishTime>
@@ -358,7 +358,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/15/2014 19:13:18</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>09/23/2014 23:00:00</publishTime>
+      <publishTime>09/26/2014 14:05:11</publishTime>
     </File>
     <File Include="Views/Shared/_ModalProductDetail.cshtml">
       <publishTime>09/23/2014 23:40:11</publishTime>
@@ -376,7 +376,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/23/2014 23:44:20</publishTime>
     </File>
     <File Include="Views/ShoppingCart/CartSummary.cshtml">
-      <publishTime>08/05/2014 17:56:39</publishTime>
+      <publishTime>05/08/2014 17:56:39</publishTime>
     </File>
     <File Include="Views/ShoppingCart/Index.cshtml">
       <publishTime>09/23/2014 23:42:38</publishTime>
@@ -394,7 +394,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/12/2014 15:16:12</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/25/2014 22:12:48</publishTime>
+      <publishTime>09/26/2014 17:12:27</publishTime>
     </File>
   </ItemGroup>
 </Project>

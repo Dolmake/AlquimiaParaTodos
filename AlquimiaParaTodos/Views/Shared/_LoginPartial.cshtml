@@ -10,7 +10,18 @@
             @Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Administrar", @class = "white-small-button" })
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()" class="red-small-button">Cerrar sesión</a></li>
-        <li> @{Html.RenderAction("CartSummary", "ShoppingCart");}</li>
+        <li>
+         @{
+            if (ViewBag.ShowMiniCart == null || ViewBag.ShowMiniCart)
+             {
+                 Html.RenderAction("CartSummary", "ShoppingCart");
+             }
+             //else
+             //{
+             //    Html.ActionLink("No cart", "Home");
+             //}
+          }
+        </li>
       
     </ul>
     }
