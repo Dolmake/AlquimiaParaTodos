@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-AlquimiaParaTodos-20140712031714.mdf;Initial Catalog=aspnet-AlquimiaParaTodos-20140712031714;Integrated Security=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="c:\\Projects\\AlquimiaParaTodos\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
-  </parameter>
-  <parameter name="AlquimiaParaTodos.DAL.AlquimiaParaTodosDBContext-Web.config Connection String" description="AlquimiaParaTodos.DAL.AlquimiaParaTodosDBContext Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="AlquimiaParaTodos.DAL.AlquimiaParaTodosDBContext_ConnectionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="c:\\Projects\\AlquimiaParaTodos\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AlquimiaParaTodos.DAL.AlquimiaParaTodosDBContext']/@connectionString" />
-  </parameter>
-</parameters>
