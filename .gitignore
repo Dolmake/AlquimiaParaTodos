@@ -26,8 +26,7 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
-
+Icon
 # Thumbnails
 ._*
 
@@ -44,6 +43,7 @@ Icon
 [Bb]in/
 [Oo]bj/
 *.suo
+AlquimiaNop/Presentation/Nop.Web/App_Data/Settings.txt
 
 
 
