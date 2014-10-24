@@ -9,11 +9,12 @@ Misc.FacebookShop
 Misc.WebServices
 Payments.CashOnDelivery
 Payments.CheckMoneyOrder
-Payments.AuthorizeNet
 Payments.Manual
+Payments.AuthorizeNet
 Payments.PayPalDirect
 Payments.PayPalStandard
 Payments.PurchaseOrder
+Payments.Sermepa
 PromotionFeed.Froogle
 Shipping.AustraliaPost
 Shipping.CanadaPost

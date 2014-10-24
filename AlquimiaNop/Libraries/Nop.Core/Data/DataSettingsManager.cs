@@ -44,7 +44,10 @@ namespace Nop.Core.Data
             {
                 string str;
                 while ((str = reader.ReadLine()) != null)
-                    settings.Add(str);
+                {
+                    if (!str.StartsWith("#"))//DANI
+                        settings.Add(str);
+                }
             }
 
             foreach (var setting in settings)
