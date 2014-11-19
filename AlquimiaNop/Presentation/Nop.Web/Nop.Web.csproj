@@ -2202,6 +2202,8 @@
     <Content Include="Themes\NopRoot\Views\Topic\TopicBlock.cshtml" />
     <Content Include="Themes\NopRoot\Views\Topic\TopicDetails.cshtml" />
     <Content Include="Themes\NopRoot\Views\Web.config" />
+    <Content Include="Themes\NopRoot\Views\Catalog\P8BlackBar.cshtml" />
+    <Content Include="Themes\NopRoot\Views\Blog\P8BlogWorkshop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Plugins\bin\" />

@@ -1,5 +1,12 @@
+
+#Hostalia
 #DataProvider: sqlserver
 #DataConnectionString: Data Source=54.76.12.174;Initial Catalog=DB_MEZCLAPERFECTA_02;Integrated Security=False;Persist Security Info=False;User ID=Eurekalab;Password=Th3P1c4r08
 
+#Local
+#DataProvider: sqlserver
+#DataConnectionString: Data Source=.\SQLEXPRESS;Initial Catalog=DB_MEZCLAPERFECTA_02;Integrated Security=True;Persist Security Info=False
+
+#Domitienda
 DataProvider: sqlserver
-DataConnectionString: Data Source=.\SQLEXPRESS;Initial Catalog=DB_MEZCLAPERFECTA_02;Integrated Security=True;Persist Security Info=False
+DataConnectionString: Data Source=sql4.servidoreswindows.net;Initial Catalog=DB_MEZCLAPERFECTA_04;Integrated Security=False;Persist Security Info=False;User ID=Eurekalab;Password=Th3P1c4r08

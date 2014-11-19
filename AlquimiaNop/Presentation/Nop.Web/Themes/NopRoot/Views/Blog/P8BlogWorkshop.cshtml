@@ -1,0 +1,20 @@
+﻿@model BlogPostListModel
+@using Nop.Web.Models.Blogs
+@if (Model.BlogPosts.Count > 0)
+{
+    <div class="block-popular-blogtags  panel panel-default side-nav">
+        <div class="panel-heading">
+            <strong> @T("Workshop")</strong>
+        </div>
+        <div class="listbox listbox panel-body">
+            <ul class="tags">
+                @foreach (var item in Model.BlogPosts)
+                {
+                    @*<a href="@Url.RouteUrl("BlogByTag", new { tag = item.Name })" style="font-size:@(Model.GetFontSize(item))%;">@item.Name</a>*@
+                    <a> @item.Title </a>
+
+                }
+            </ul>
+        </div>
+    </div>
+}

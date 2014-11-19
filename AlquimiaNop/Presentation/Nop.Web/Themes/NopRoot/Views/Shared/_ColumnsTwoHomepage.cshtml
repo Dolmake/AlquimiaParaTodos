@@ -54,7 +54,10 @@
                 @Html.Widget("left_side_column_before")
                 @Html.Action("CategoryNavigation", "Catalog", new { currentCategoryId = currentCategoryId, currentProductId = currentProductId })
                 @Html.Widget("left_side_column_after_category_navigation")
-                @Html.Action("ManufacturerNavigation", "Catalog", new { currentManufacturerId = currentManufacturerId })
+                @*P8*@
+                @*@Html.Action("ManufacturerNavigation", "Catalog", new { currentManufacturerId = currentManufacturerId })*@
+                @Html.Action("P8BlogWorkshop", "Blog")
+                
                 @Html.Action("RecentlyViewedProductsBlock", "Product", new { productThumbPictureSize = 32 })
                 @Html.Action("PopularProductTags", "Catalog")
                 @Html.Action("PollBlock", "Poll", new { systemKeyword = "LeftColumnPoll" })

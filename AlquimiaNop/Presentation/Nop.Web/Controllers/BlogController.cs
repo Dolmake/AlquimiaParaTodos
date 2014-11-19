@@ -347,6 +347,29 @@ namespace Nop.Web.Controllers
             return PartialView(cachedModel);
         }
 
+        //P8BlogWorkshop
+        [ChildActionOnly]
+        public ActionResult P8BlogWorkshop()
+        {
+            if (!_blogSettings.Enabled)
+                return Content("");
+
+            var posts = _blogService.GetAllBlogPosts(0,0,null,null,0,5);
+
+
+
+            var model = new BlogPostListModel();
+            foreach(var p in posts)
+            {
+                BlogPostModel bpm = new BlogPostModel();
+                bpm.Title = p.Title;
+                model.BlogPosts.Add(bpm);
+            }
+
+
+            return PartialView(model);
+        }
+
         [ChildActionOnly]
         public ActionResult BlogMonths()
         {

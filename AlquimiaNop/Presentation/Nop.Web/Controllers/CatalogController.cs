@@ -678,6 +678,12 @@ namespace Nop.Web.Controllers
             };
             return PartialView(model);
         }
+
+        [ChildActionOnly]
+        public ActionResult P8BlackBar()
+        {
+            return PartialView("P8BlackBar");
+        }
         
         [ChildActionOnly]
         public ActionResult HomepageCategories()
