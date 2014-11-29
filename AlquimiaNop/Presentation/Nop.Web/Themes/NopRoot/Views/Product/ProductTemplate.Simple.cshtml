@@ -124,13 +124,15 @@
                     <div class="clearfix"></div>
                     <ul class="nav nav-tabs">
                         @if (!String.IsNullOrEmpty(Model.FullDescription))
-                        {
-                          
+                        {                          
                             <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
-                        }
+                        }     
+                        @if (!String.IsNullOrEmpty(Model.Suggestions))
+                        {
+                            <li><a href="#suggestions" data-toggle="tab">Suggestions</a></li>
+                        }                            
                         @if (!String.IsNullOrEmpty(@Html.Partial("_ProductSpecifications", Model.ProductSpecifications).ToString()))
                         {
-
                             <li><a href="#specification" data-toggle="tab">Specifications</a></li>
                         }
                         @if (!String.IsNullOrEmpty(@Html.Partial("_ProductTags", Model.ProductTags).ToString()))
@@ -153,6 +155,12 @@
                         <div class="full-description tab-pane" id="tags">
                            @Html.Partial("_ProductTags", Model.ProductTags)
                         </div>
+                        @if (!String.IsNullOrEmpty(Model.Suggestions))
+                        {
+                            <div class="full-description tab-pane" id="suggestions">
+                                @Html.Raw(Model.Suggestions)
+                            </div>
+                        }
                     </div>
                 </div>
 

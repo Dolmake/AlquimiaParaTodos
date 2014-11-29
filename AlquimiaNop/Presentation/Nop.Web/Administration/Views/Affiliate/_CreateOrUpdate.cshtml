@@ -77,6 +77,16 @@
                     @Model.Url
                 </td>
             </tr>
+
+            <tr>
+                <td class="adminTitle">
+                    @Html.NopLabelFor(model => model.AffiliateWebSite):
+                </td>
+                <td class="adminData">
+                    @Html.EditorFor(model => model.AffiliateWebSite)
+                    @Html.ValidationMessageFor(model => model.Active)
+                </td>
+            </tr>
         }
         <tr>
             <td class="adminTitle">

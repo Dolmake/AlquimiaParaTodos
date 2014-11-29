@@ -204,6 +204,7 @@ namespace Nop.Web.Controllers
             {
                 Id = product.Id,
                 Name = product.GetLocalized(x => x.Name),
+                Suggestions = product.GetLocalized(x => x.Suggestions),
                 ShortDescription = product.GetLocalized(x => x.ShortDescription),
                 FullDescription = product.GetLocalized(x => x.FullDescription),
                 MetaKeywords = product.GetLocalized(x => x.MetaKeywords),

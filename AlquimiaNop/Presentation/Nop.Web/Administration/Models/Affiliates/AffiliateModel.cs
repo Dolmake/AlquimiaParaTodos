@@ -26,6 +26,11 @@ namespace Nop.Admin.Models.Affiliates
 
         public AddressModel Address { get; set; }
 
+        // The NopResourceDisplayName provides the "key" used during localization
+        // Keep an eye out for more about localization in future blogs
+        [NopResourceDisplayName("Admin.Affiliates.Fields.AffiliateWebSite")]
+        public string AffiliateWebSite { get; set; }
+
         #region Nested classes
         
         public partial class AffiliatedOrderModel : BaseNopEntityModel

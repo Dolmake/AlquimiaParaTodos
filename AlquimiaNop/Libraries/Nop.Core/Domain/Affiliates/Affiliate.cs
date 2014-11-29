@@ -20,5 +20,10 @@ namespace Nop.Core.Domain.Affiliates
         public bool Active { get; set; }
 
         public virtual Address Address { get; set; }
+
+        // Instance members must be virtual on data table objects like Affiliate.cs
+        // Virtual is required by data access frameworks so that these frameworks
+        // can implement more complex features like lazy loading.
+        public virtual string AffiliateWebSite { get; set; }
     }
 }

@@ -59,6 +59,12 @@ namespace Nop.Admin.Models.Catalog
         [AllowHtml]
         public string Name { get; set; }
 
+        // The NopResourceDisplayName provides the "key" used during localization
+        // Keep an eye out for more about localization in future blogs
+        [NopResourceDisplayName("Admin.Catalog.Products.Fields.Suggestions")]
+        [AllowHtml]
+        public string Suggestions { get; set; }
+
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.ShortDescription")]
         [AllowHtml]
         public string ShortDescription { get; set; }
@@ -849,5 +855,10 @@ namespace Nop.Admin.Models.Catalog
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.SeName")]
         [AllowHtml]
         public string SeName { get; set; }
+
+        //P8
+        [AllowHtml]
+        [NopResourceDisplayName("Admin.Catalog.Products.Fields.Suggestions")]
+        public string Suggestions { get; set; }
     }
 }

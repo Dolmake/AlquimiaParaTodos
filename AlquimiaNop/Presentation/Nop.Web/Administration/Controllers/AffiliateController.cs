@@ -77,6 +77,8 @@ namespace Nop.Admin.Controllers
                 if (!excludeProperties)
                 {
                     model.Active = affiliate.Active;
+                    // Data Model -> Ceate/Edit View Model
+                    model.AffiliateWebSite = affiliate.AffiliateWebSite;
                     model.Address = affiliate.Address.ToModel();
                 }
             }
@@ -183,6 +185,10 @@ namespace Nop.Admin.Controllers
                 affiliate.Active = model.Active;
                 affiliate.Address = model.Address.ToEntity();
                 affiliate.Address.CreatedOnUtc = DateTime.UtcNow;
+
+                // Create View Model -> Data Model
+                affiliate.AffiliateWebSite = model.AffiliateWebSite;
+
                 //some validation
                 if (affiliate.Address.CountryId == 0)
                     affiliate.Address.CountryId = null;
@@ -232,6 +238,10 @@ namespace Nop.Admin.Controllers
             {
                 affiliate.Active = model.Active;
                 affiliate.Address = model.Address.ToEntity(affiliate.Address);
+
+                // Edit View Model -> Data Model
+                affiliate.AffiliateWebSite = model.AffiliateWebSite;
+
                 //some validation
                 if (affiliate.Address.CountryId == 0)
                     affiliate.Address.CountryId = null;

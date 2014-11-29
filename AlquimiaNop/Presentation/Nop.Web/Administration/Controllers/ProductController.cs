@@ -199,6 +199,10 @@ namespace Nop.Admin.Controllers
                                                                x => x.MetaTitle,
                                                                localized.MetaTitle,
                                                                localized.LanguageId);
+                _localizedEntityService.SaveLocalizedValue(product,
+                                                             x => x.Suggestions,
+                                                             localized.Suggestions,
+                                                             localized.LanguageId);
 
                 //search engine name
                 var seName = product.ValidateSeName(localized.SeName, localized.Name, false);
@@ -611,6 +615,9 @@ namespace Nop.Admin.Controllers
                 model.Published = true;
                 model.VisibleIndividually = true;
             }
+
+            //P8
+            model.Suggestions = product.Suggestions;
         }
 
         [NonAction]
@@ -810,6 +817,11 @@ namespace Nop.Admin.Controllers
                 _customerActivityService.InsertActivity("AddNewProduct", _localizationService.GetResource("ActivityLog.AddNewProduct"), product.Name);
                 
                 SuccessNotification(_localizationService.GetResource("Admin.Catalog.Products.Added"));
+
+                //P8
+                // Create View Model -> Data Model
+                product.Suggestions = model.Suggestions;
+
                 return continueEditing ? RedirectToAction("Edit", new { id = product.Id }) : RedirectToAction("List");
             }
 
@@ -846,6 +858,7 @@ namespace Nop.Admin.Controllers
                     locale.MetaDescription = product.GetLocalized(x => x.MetaDescription, languageId, false, false);
                     locale.MetaTitle = product.GetLocalized(x => x.MetaTitle, languageId, false, false);
                     locale.SeName = product.GetSeName(languageId, false, false);
+                    locale.Suggestions = product.GetLocalized(x => x.Suggestions, languageId, false, false);
                 });
 
             PrepareAclModel(model, product, false);
@@ -952,6 +965,11 @@ namespace Nop.Admin.Controllers
             PrepareProductModel(model, product, false, true);
             PrepareAclModel(model, product, true);
             PrepareStoresMappingModel(model, product, true);
+
+            //P8
+            // Edit View Model -> Data Model
+            product.Suggestions = model.Suggestions;
+
             return View(model);
         }
 

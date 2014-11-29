@@ -8,6 +8,8 @@ namespace Nop.Admin.Validators.Affiliates
     {
         public AffiliateValidator(ILocalizationService localizationService)
         {
+            //I think this code can speak for itself
+            RuleFor(m => m.AffiliateWebSite).Length(0, 255);
         }
     }
 }
