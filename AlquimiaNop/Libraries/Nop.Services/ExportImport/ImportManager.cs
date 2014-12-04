@@ -101,6 +101,10 @@ namespace Nop.Services.ExportImport
                     "VisibleIndividually",
                     "Name",
                     "ShortDescription",
+
+                    // DAN
+                    "Suggestions",
+
                     "FullDescription",
                     "VendorId",
                     "ProductTemplateId",
@@ -197,6 +201,10 @@ namespace Nop.Services.ExportImport
                     bool visibleIndividually = Convert.ToBoolean(worksheet.Cells[iRow, GetColumnIndex(properties, "VisibleIndividually")].Value);
                     string name = ConvertColumnToString(worksheet.Cells[iRow, GetColumnIndex(properties, "Name")].Value);
                     string shortDescription = ConvertColumnToString(worksheet.Cells[iRow, GetColumnIndex(properties, "ShortDescription")].Value);
+
+                    // DAN
+                    string suggestions = ConvertColumnToString(worksheet.Cells[iRow, GetColumnIndex(properties, "Suggestions")].Value);
+
                     string fullDescription = ConvertColumnToString(worksheet.Cells[iRow, GetColumnIndex(properties, "FullDescription")].Value);
                     int vendorId = Convert.ToInt32(worksheet.Cells[iRow, GetColumnIndex(properties, "VendorId")].Value);
                     int productTemplateId = Convert.ToInt32(worksheet.Cells[iRow, GetColumnIndex(properties, "ProductTemplateId")].Value);
@@ -300,6 +308,10 @@ namespace Nop.Services.ExportImport
                     product.VisibleIndividually = visibleIndividually;
                     product.Name = name;
                     product.ShortDescription = shortDescription;
+
+                    // DAN
+                    product.Suggestions = suggestions;
+
                     product.FullDescription = fullDescription;
                     product.VendorId = vendorId;
                     product.ProductTemplateId = productTemplateId;
