@@ -1969,6 +1969,7 @@
     <Content Include="Themes\NopRoot\Scripts\respond.min.js" />
     <Content Include="Themes\NopRoot\Scripts\styleSheetToogle.js" />
     <Content Include="Themes\NopRoot\Views\preview.jpg" />
+    <None Include="Themes\NopRoot\Views\Shared\_GmapsPartialView.cshtml" />
     <Content Include="Themes\print.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -2204,6 +2205,7 @@
     <Content Include="Themes\NopRoot\Views\Web.config" />
     <Content Include="Themes\NopRoot\Views\Catalog\P8BlackBar.cshtml" />
     <Content Include="Themes\NopRoot\Views\Blog\P8BlogWorkshop.cshtml" />
+    <Content Include="Themes\NopRoot\Views\Shared\_GmapsLayoutView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Plugins\bin\" />

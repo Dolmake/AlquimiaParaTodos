@@ -616,7 +616,7 @@ namespace Nop.Admin.Controllers
                 model.VisibleIndividually = true;
             }
 
-            //P8
+            // DAN: Product.Suggestions
             model.Suggestions = product.Suggestions;
         }
 
@@ -818,8 +818,7 @@ namespace Nop.Admin.Controllers
                 
                 SuccessNotification(_localizationService.GetResource("Admin.Catalog.Products.Added"));
 
-                //P8
-                // Create View Model -> Data Model
+                // DAN: Product.Suggestions
                 product.Suggestions = model.Suggestions;
 
                 return continueEditing ? RedirectToAction("Edit", new { id = product.Id }) : RedirectToAction("List");
@@ -858,6 +857,7 @@ namespace Nop.Admin.Controllers
                     locale.MetaDescription = product.GetLocalized(x => x.MetaDescription, languageId, false, false);
                     locale.MetaTitle = product.GetLocalized(x => x.MetaTitle, languageId, false, false);
                     locale.SeName = product.GetSeName(languageId, false, false);
+                    // DAN: Product.Suggestions
                     locale.Suggestions = product.GetLocalized(x => x.Suggestions, languageId, false, false);
                 });
 
@@ -966,9 +966,8 @@ namespace Nop.Admin.Controllers
             PrepareAclModel(model, product, true);
             PrepareStoresMappingModel(model, product, true);
 
-            //P8
-            // Edit View Model -> Data Model
-            product.Suggestions = model.Suggestions;
+            //// DAN: Product.Suggestions
+            //product.Suggestions = model.Suggestions;
 
             return View(model);
         }

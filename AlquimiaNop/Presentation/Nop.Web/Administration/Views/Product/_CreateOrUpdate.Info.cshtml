@@ -346,16 +346,7 @@
                             @Html.EditorFor(model => model.Locales[item].Name)
                             @Html.ValidationMessageFor(model => model.Locales[item].Name)
                         </td>
-                    </tr>
-                     <tr>
-                         <td class="adminTitle">    
-                             @Html.NopLabelFor(model => model.Locales[item].Suggestions):
-                         </td>
-                         <td class="adminData">                              
-                            @Html.TextAreaFor(model => model.Locales[item].Suggestions, new { style = "Width: 250px; Height: 150px;" })
-                             @Html.ValidationMessageFor(model => model.Locales[item].Suggestions)
-                         </td>
-                     </tr>
+                    </tr>                    
                     <tr>
                         <td class="adminTitle">
                             @Html.NopLabelFor(model => model.Locales[item].ShortDescription):
@@ -365,6 +356,16 @@
                             @Html.ValidationMessageFor(model => model.Locales[item].ShortDescription)
                         </td>
                     </tr>
+                     <tr>
+                         <!--// DAN: Product.Suggestions-->
+                         <td class="adminTitle">
+                             @Html.NopLabelFor(model => model.Locales[item].Suggestions):
+                         </td>
+                         <td class="adminData">
+                             @Html.TextAreaFor(model => model.Locales[item].Suggestions, new { style = "Width: 250px; Height: 150px;" })
+                             @Html.ValidationMessageFor(model => model.Locales[item].Suggestions)
+                         </td>
+                     </tr>
                     <tr>
                         <td class="adminTitle">
                             @Html.NopLabelFor(model => model.Locales[item].FullDescription):
@@ -400,13 +401,14 @@
                             @Html.ValidationMessageFor(model => model.ShortDescription)
                         </td>
                     </tr>
-                     <td class="adminTitle">                         
-                         @Html.NopLabelFor(model => model.Suggestions):
-                     </td>
-                     <td class="adminData">                         
-                         @Html.TextAreaFor(x => x.Suggestions, new { style = "Width: 250px; Height: 150px;" })
-                         @Html.ValidationMessageFor(model => model.Suggestions)
-                     </td>
+                        <!--// DAN: Product.Suggestions-->
+                         <td class="adminTitle">                         
+                             @Html.NopLabelFor(model => model.Suggestions):
+                         </td>
+                         <td class="adminData">                         
+                             @Html.TextAreaFor(x => x.Suggestions, new { style = "Width: 250px; Height: 150px;" })
+                             @Html.ValidationMessageFor(model => model.Suggestions)
+                         </td>
                     <tr>
                         <td class="adminTitle">
                             @Html.NopLabelFor(model => model.FullDescription):

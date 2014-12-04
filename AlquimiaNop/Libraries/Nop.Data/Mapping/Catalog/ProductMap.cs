@@ -41,9 +41,7 @@ namespace Nop.Data.Mapping.Catalog
                 .WithMany(pt => pt.Products)
                 .Map(m => m.ToTable("Product_ProductTag_Mapping"));
 
-            // This code maps a column in the database to the new property we created above
-            // This creates a nullable nvarchar with a length of 255 characters 
-            // in the Affiliate SQL table
+            // DAN: Product.Suggestions
             this.Property(m => m.Suggestions).HasMaxLength(1024).IsOptional();	
         }
     }

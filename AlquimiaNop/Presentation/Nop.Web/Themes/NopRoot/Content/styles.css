@@ -98,7 +98,7 @@ a { color: #000; }
 
 .header-logo { float: left; margin-top: 5px; text-align: left; }
 
-a.logo { background: url("images/logo.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0); display: block; height: 60px; text-decoration: none; width: 310px; }
+a.logo { background: url("images/logo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); display: block; height: 60px; text-decoration: none; width: 310px; }
 
 .title-box { margin: 70px 0 30px 0; }
 
@@ -915,4 +915,33 @@ margin-left: 10%;
 .filterTitle {
    background-color: #F0F0F0; display: block; padding: 5px 5px;
 }
+
+
+/*  DAN Styles     */
+
+.btn-primary:hover {
+  background-color:#b8f79c;
+  border-color:#92f565;
+  color:#FFFFFF;
+}
+.btn {
+  background-color:#5a973e;
+  border-color:#92f565;
+  color:#FFFFFF;
+}
+
+/* #D2EFC5 */
+.panel-title {
+    font-size: 14px;
+    color: inherit;
+}
+
+
+.panel-default>.panel-heading {
+color: #333;
+background-color: #D2EFC5;
+border-color: #ddd;
+ padding: 1px 1px
+}
+
 
